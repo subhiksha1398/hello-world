@@ -1,6 +1,6 @@
 # hello-world
 # Line clipping Algorithm using Nicholl–Lee–Nicholl algorithm.
-NLN- is another algorithm in Line clipping which has 3 possible positions for Line endpoint P1 such as 
+NLN- is another algorithm in Line clipping which has 3 possible positions for Line endpoint P1 such as :
 1. in window region 2. in edge region  3. in corner region. 
 According to where the point lies we need to find out the intersection and  then draw a vertex where point lies, so that we we can find intersection points.
 Name the intersection point for reference and check intersection pointslies between the points p1 &p2 also check which region it falls that  is [LRBT] Left,Right,Bottom,Top.
