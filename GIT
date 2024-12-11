@@ -1,0 +1,35 @@
+// Import Cypress commands
+/// <reference types="cypress" />
+
+describe('Login Test', () => {
+  beforeEach(() => {
+    // Navigate to the login page before each test
+    cy.visit('https://example.com/login');
+  });
+
+  it('Should log in successfully with valid credentials', () => {
+    // Replace with appropriate selectors and credentials
+    cy.get('input[name="username"]') // Find username input field
+      .type('demoUser'); // Type in username
+
+    cy.get('input[name="password"]') // Find password input field
+      .type('demoPassword'); // Type in password
+
+    cy.get('button[type="submit"]') // Find and click the login button
+      .click();
+
+    // Verify successful login (adjust selector and text as needed)
+    cy.contains('Welcome, demoUser').should('be.visible');
+  });
+
+  it('Should show an error message with invalid credentials', () => {
+    // Enter invalid username and password
+    cy.get('input[name="username"]').type('wrongUser');
+    cy.get('input[name="password"]').type('wrongPassword');
+
+    cy.get('button[type="submit"]').click();
+
+    // Verify error message is displayed (adjust selector and text as needed)
+    cy.contains('Invalid username or password').should('be.visible');
+  });
+});
